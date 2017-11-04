@@ -4,7 +4,7 @@ echo "------------- Getting example $option."
 
 
 git checkout .
-#git pull
+git pull
 
   case $option in
 	1)

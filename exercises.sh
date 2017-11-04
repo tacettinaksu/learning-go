@@ -12,6 +12,7 @@ git checkout .
 		git checkout exercise-$option
 		;;
 	2)
+		echo "------------- SUBJECT: Branching, loops"
 		git checkout exercise-$option
 		;;
 	*)

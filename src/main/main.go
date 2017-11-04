@@ -3,54 +3,61 @@ package main
 import "fmt"
 
 func main() {
-	var myInt int
-	myInt = 42
 
-	var myFloat32 float32 = 42.
+	foo := 3
 
-	myString := "Hello Go"
+	switch {
+	case foo == 1:
+		fmt.Println("one")
+	case foo > 2:
+		fmt.Println(">2")
+	}
 
-	myComplex := complex(2, 3)
-
-	println(myInt)
-	println(myFloat32)
-	println(myString)
-	println(myComplex)
-	println(real(myComplex))
-	println(imag(myComplex))
-
-	myArray := [...]int{28, 53, 61, 52, 29}
+	if foo == 1 {
+		fmt.Println("one")
+	} else {
+		fmt.Println("other than one")
+	}
 
 	fmt.Println("")
-	fmt.Println("------------ ARRAYS -----------------------------")
+	fmt.Println("-----------------------------------------------")
 
-	myArray[2] = 19
-	//myArray[5] = 23     //-> ERROR on compile time
+	m := make(map[string]string)
 
-	fmt.Println("myArray ", myArray)
+	m["java"] = "good"
+	m[".net"] = "bad"
+	m["go"] = "cool"
 
-	mySlice := myArray[:]
-
-	fmt.Println("mySlice full      : ", mySlice)
-
-	mySlice = myArray[2:4]
-
-	fmt.Println("mySlice 2:4       : ", mySlice)
-
-	mySlice = append(mySlice, 100)
-
-	fmt.Println("mySlice appended  : ", mySlice)
+	for k, v := range m {
+		fmt.Println(k, v)
+	}
 
 	fmt.Println("")
-	fmt.Println("---------------   MAPS   ------------------------------------")
+	fmt.Println("-----------------------------------------------")
 
-	myMap := make(map[int]string)
+	arr := []string{"scrum", "agile", "lean", "xp"}
 
-	fmt.Println("myMap empty  : ", myMap)
+	for idx, value := range arr {
+		fmt.Println(idx, value)
+	}
 
-	myMap[42] = "Foo"
-	myMap[12] = "Bar"
+	fmt.Println("")
+	fmt.Println("-----------------------------------------------")
 
-	fmt.Println("myMap        : ", myMap)
-	fmt.Println("myMap key 12 : ", myMap[12])
+	for i := 0; i < 5; i++ {
+		fmt.Println(i)
+	}
+
+	fmt.Println("")
+	fmt.Println("-----------------------------------------------")
+	j := 0
+
+	for {
+		j++
+		fmt.Println(j)
+
+		if j > 5 {
+			break
+		}
+	}
 }
